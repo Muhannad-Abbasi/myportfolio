@@ -21,9 +21,9 @@ const Footer = () => {
       message: '',
     },
     validationSchema: Yup.object({
-      name: Yup.string().required('Namn krävs'),
-      email: Yup.string().email('Invalid email').required('Email krävs'),
-      message: Yup.string().required('Meddelandet får inte vara tomt'),
+      name: Yup.string().required('Name required'),
+      email: Yup.string().email('Invalid email').required('Email required'),
+      message: Yup.string().required('The message cannot be empty'),
     }),
     onSubmit: (values) => {
       setLoading(true);
@@ -38,12 +38,12 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Chatta Med Oss</h2>
+      <h2 className="head-text">Take a coffee & chat with me ☕</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:info@sfhsweden.se" className="p-text">info@sfhsweden.se</a>
+          <a href="muhannad.abbasi.1995@gmail.com" className="p-text">muhannad.abbasi.1995@gmail.com</a>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
             fullWidth
             id="name"
             name="name"
-            placeholder="Ditt namn"
+            placeholder="Your name"
             className="app__footer-form app__flex"
             value={formik.values.name}
             onChange={formik.handleChange}
@@ -71,7 +71,7 @@ const Footer = () => {
             fullWidth
             id="email"
             name="email"
-            placeholder="Din email"
+            placeholder="Your email"
             className="app__footer-form app__flex"
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -86,7 +86,7 @@ const Footer = () => {
             fullWidth
             id="message"
             name="message"
-            placeholder="Ditt meddelande"
+            placeholder="Your message"
             className="app__footer-form app__flex"
             value={formik.values.message}
             onChange={formik.handleChange}
@@ -102,14 +102,14 @@ const Footer = () => {
               type="submit"
               className="p-text"
             >
-              {!loading ? 'Skicka meddelande' : 'Skickar...'}
+              {!loading ? 'Send message' : 'Sending...'}
             </button>
           </div>
         </form>
       ) : (
         <div>
           <h3 className="head-text">
-            Tack För Att Du Hör Av Dig!
+            Thank you for your message!
           </h3>
         </div>
       )}
